@@ -1,0 +1,118 @@
+## SNAP (Scientist Network for Advancing Policy) matplotlib style
+##
+## Usage:
+##   import matplotlib.pyplot as plt
+##   plt.style.use("path/to/snap.mplstyle")
+##   # or copy into ~/.config/matplotlib/stylelib/ and use plt.style.use("snap")
+##
+## Palette (from the style guide)
+##   Primary:     navy   #213863   orange #E89142
+##   Secondary:   slate  #687DA2   olive  #C2C354   purple #310A45
+##                tan    #F4D294   yellow #F2F493
+##   Text grays:  #434343 (body), #595959 (secondary text)
+##
+## Font sizes follow the slide guide (titles 25-44 pt, body 18-28 pt), so they
+## match surrounding slide text when the figure is placed at 100% scale on a
+## 16:9 slide. For papers or blogs, scale them down with e.g.
+##   plt.rcParams.update({"font.size": 11})
+## or use plt.style.use(["snap", {"figure.figsize": (6, 4)}]).
+##
+## Pale yellow (#F2F493) is left out of the color cycle because it is nearly
+## invisible on white. Use it for highlights, shaded spans, or dark backgrounds.
+
+## ---------------------------------------------------------------------------
+## Colors
+## ---------------------------------------------------------------------------
+axes.prop_cycle: cycler('color', ['213863', 'E89142', '687DA2', 'C2C354', '310A45', 'F4D294'])
+
+text.color:        434343
+axes.labelcolor:   434343
+axes.titlecolor:   213863
+axes.edgecolor:    595959
+axes.facecolor:    FFFFFF
+figure.facecolor:  FFFFFF
+savefig.facecolor: FFFFFF
+xtick.color:       595959
+ytick.color:       595959
+xtick.labelcolor:  434343
+ytick.labelcolor:  434343
+grid.color:        E3E3E3
+
+## Sequential colormap closest in spirit to the navy-to-yellow palette
+image.cmap: cividis
+
+## ---------------------------------------------------------------------------
+## Typography
+##   Titles: Open Sans SemiBold   Body: Open Sans   Accent: Montserrat
+## ---------------------------------------------------------------------------
+font.family:     sans-serif
+font.sans-serif: Open Sans, Montserrat, Helvetica Neue, Helvetica, Arial, DejaVu Sans
+font.size:       18
+
+axes.titlesize:    25
+axes.titleweight:  semibold
+axes.titlelocation: left
+axes.titlepad:     12
+axes.labelsize:    18
+axes.labelweight:  normal
+axes.labelpad:     8
+
+figure.titlesize:   28
+figure.titleweight: semibold
+
+xtick.labelsize: 16
+ytick.labelsize: 16
+legend.fontsize: 16
+legend.title_fontsize: 16
+
+mathtext.fontset: dejavusans
+
+## ---------------------------------------------------------------------------
+## Axes and grid: clean, open frame
+## ---------------------------------------------------------------------------
+axes.spines.top:   False
+axes.spines.right: False
+axes.linewidth:    1.0
+axes.grid:         True
+axes.grid.axis:    y
+axes.axisbelow:    True
+grid.linewidth:    0.8
+grid.linestyle:    -
+
+xtick.direction:   out
+ytick.direction:   out
+xtick.major.size:  5
+ytick.major.size:  5
+xtick.major.width: 1.0
+ytick.major.width: 1.0
+xtick.minor.size:  3
+ytick.minor.size:  3
+
+## ---------------------------------------------------------------------------
+## Lines, markers, patches
+## ---------------------------------------------------------------------------
+lines.linewidth:   2.5
+lines.markersize:  8
+lines.solid_capstyle: round
+scatter.edgecolors: face
+patch.edgecolor:   FFFFFF
+patch.linewidth:   0.8
+errorbar.capsize:  4
+
+## ---------------------------------------------------------------------------
+## Legend
+## ---------------------------------------------------------------------------
+legend.frameon:   False
+legend.loc:       best
+legend.handlelength: 1.6
+
+## ---------------------------------------------------------------------------
+## Figure and saving (16:9, matches slide aspect ratio)
+## ---------------------------------------------------------------------------
+figure.figsize:      10, 5.625
+figure.dpi:          100
+figure.constrained_layout.use: True
+savefig.dpi:         300
+savefig.bbox:        tight
+savefig.pad_inches:  0.1
+savefig.transparent: False
